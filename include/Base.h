@@ -7,14 +7,17 @@
 
 #ifndef BASE_H_
 #define BASE_H_
-#include <string>
 #include <iostream>
+#include <string>
+
 class Base{
 
 public:
 	Base()=default;
 	virtual ~Base()=default;
-	virtual bool parse(const std::string & );
+	virtual bool parse(const std::string &);
+	virtual int firstparse(std::string&);
+	virtual int BccCheck(const char *src);
 
 };
 

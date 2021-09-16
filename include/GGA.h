@@ -32,13 +32,15 @@
 //字段13：校验值
 #ifndef GGA_H_
 #define GGA_H_
+#include <iostream>
 #include "Base.h"
+
 class GGA : public Base
 {
 public:
 	GGA()=default;
 	~GGA()=default;
-	bool parse(const std::string & );
+	bool parse(const std::string &);
 private:
 	std::string UTC;//UTC 时间，hhmmss.sss，时分秒格式
 	std::string lat;//纬度ddmm.mmmm，度分格式（前导位数不足则补0
@@ -52,7 +54,6 @@ private:
 	std::string relative_altitude;//地球椭球面相对大地水准面的高度
 	std::string difftime;//差分时间
 	std::string diffid;//差分站ID号0000 - 1023（前导位数不足则补0，如果不是差分定位将为空）
-	std::string check;//校验值
 };
 
 
