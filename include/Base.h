@@ -7,9 +7,7 @@
 
 #ifndef BASE_H_
 #define BASE_H_
-#include <iostream>
-#include <string>
-#include <vector>
+#include "util.h"
 class Base{
 
 public:
@@ -17,8 +15,6 @@ public:
 	virtual ~Base()=default;
 	virtual bool parse(std::vector<std::string>&)=0;
 	virtual int firstparse(std::string&,std::vector<std::string>&);
-	virtual int BccCheck(const char *src);
-
 };
 
 

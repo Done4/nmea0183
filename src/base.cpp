@@ -7,7 +7,6 @@
 
 #include "Base.h"
 
-
 int Base::firstparse(std::string & msg,std::vector<std::string>&res)
 {
 	if(msg[0] != '$')
@@ -34,22 +33,5 @@ int Base::firstparse(std::string & msg,std::vector<std::string>&res)
 
 	return 0;
 }
-int Base::BccCheck(const char *src) {
-	  int sum = 0;
-	  int num = 0;
-	  try
-	  {
-		  sscanf(src, "%*[^*]*%x", &num);
-		  for (int i = 1; src[i] != '*'; ++i)
-		  {
-			  sum ^= src[i];
-		  }
-	  }
-	  catch(...)
-	  {
-		  std::cout<<"读取校验值失败"<<std::endl;
-		  return -1;
-	  }
-	  return sum - num;
-}
+
 

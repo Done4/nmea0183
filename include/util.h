@@ -7,9 +7,10 @@
 
 #ifndef UTIL_H_
 #define UTIL_H_
-
-#include "Base.h"
+#include <iostream>
+#include <string>
+#include <vector>
 
 bool baseparse(std::string &,std::vector<std::string>&);
-
+int BccCheck(const char *src);
 #endif /* UTIL_H_ */
