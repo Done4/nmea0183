@@ -30,7 +30,7 @@ bool RMC::parse(std::vector<std::string>&res)
 			return false;
 		}
 
-		std::cout<<"UTC 时间:"<<UTC<<" 定位状态:"<<status<<" 纬度:"<<lat<<" N/S:"<<latname<<" 经度:"<<lng<<" E/W:"<<lngname<<" 地面速率"<<speed<<" 地面航向:"<<azimuth<<" UTC日期:"<<UTCdate<<" 磁偏角:"<<md<<" 磁偏角方向:"<<mdd<<" 模式:"<<mode<<std::endl;
+		std::cout<<"UTC 时间:"<<UTC<<" 定位状态:"<<status<<" 纬度:"<<convertLat(lat,latname)<<" N/S:"<<latname<<" 经度:"<<convertLat(lng,lng)<<" E/W:"<<lngname<<" 地面速率"<<speed<<" 地面航向:"<<azimuth<<" UTC日期:"<<UTCdate<<" 磁偏角:"<<md<<" 磁偏角方向:"<<mdd<<" 模式:"<<mode<<std::endl;
 		return true;
 }
 

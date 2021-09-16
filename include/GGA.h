@@ -39,7 +39,7 @@ class GGA : public Base
 public:
 	GGA()=default;
 	~GGA()=default;
-	bool parse(std::vector<std::string>&);
+	bool parse(std::vector<std::string>&);//给成员变量赋值
 private:
 	std::string UTC;//UTC 时间，hhmmss.sss，时分秒格式
 	std::string lat;//纬度ddmm.mmmm，度分格式（前导位数不足则补0

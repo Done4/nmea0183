@@ -31,6 +31,6 @@ bool GGA::parse(std::vector<std::string>&res)
 		return false;
 	}
 	
-	std::cout<<"UTC 时间:"<<UTC<<" 纬度:"<<lat<<" N/S:"<<latname<<" 经度:"<<lng<<" E/W:"<<lngname<<" GPS状态"<<GPSStatus<<" 正在使用的卫星数量:"<<satNum<<" HDOP水平精度因子:"<<haf<<" 海拔高度:"<<altitude<<" 地球椭球面相对大地水准面的高度:"<<relative_altitude<<" 差分时间:"<<difftime<<" 差分站ID号:"<<diffid<<std::endl;
+	std::cout<<"UTC 时间:"<<UTC<<" 纬度:"<<convertLat(lat,latname)<<" N/S:"<<latname<<" 经度:"<<convertLat(lng,lng)<<" E/W:"<<lngname<<" GPS状态"<<GPSStatus<<" 正在使用的卫星数量:"<<satNum<<" HDOP水平精度因子:"<<haf<<" 海拔高度:"<<altitude<<" 地球椭球面相对大地水准面的高度:"<<relative_altitude<<" 差分时间:"<<difftime<<" 差分站ID号:"<<diffid<<std::endl;
 	return true;
 }

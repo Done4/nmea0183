@@ -14,7 +14,7 @@ class RMC : public Base
 public:
 	RMC()=default;
 	~RMC()=default;
-	bool parse(std::vector<std::string>&);
+	bool parse(std::vector<std::string>&);////给成员变量赋值
 private:
 	std::string UTC;//UTC时间，hhmmss.sss格式
     std::string status;//定位状态，A=定位，V=未定位
