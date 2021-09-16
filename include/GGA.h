@@ -32,7 +32,6 @@
 //字段13：校验值
 #ifndef GGA_H_
 #define GGA_H_
-#include <iostream>
 #include "Base.h"
 
 class GGA : public Base
@@ -40,7 +39,7 @@ class GGA : public Base
 public:
 	GGA()=default;
 	~GGA()=default;
-	bool parse(const std::string &);
+	bool parse(std::vector<std::string>&);
 private:
 	std::string UTC;//UTC 时间，hhmmss.sss，时分秒格式
 	std::string lat;//纬度ddmm.mmmm，度分格式（前导位数不足则补0

@@ -6,17 +6,23 @@
 CPP_SRCS += \
 ../src/base.cpp \
 ../src/gga.cpp \
-../src/main.cpp 
+../src/main.cpp \
+../src/rmc.cpp \
+../src/util.cpp 
 
 OBJS += \
 ./src/base.o \
 ./src/gga.o \
-./src/main.o 
+./src/main.o \
+./src/rmc.o \
+./src/util.o 
 
 CPP_DEPS += \
 ./src/base.d \
 ./src/gga.d \
-./src/main.d 
+./src/main.d \
+./src/rmc.d \
+./src/util.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
