@@ -9,6 +9,10 @@
 #include "Base.h"
 #include "GGA.h"
 #include "RMC.h"
+#include "GLL.h"
+#include "GSA.h"
+#include "GSV.h"
+#include "VTG.h"
 #include "util.h"
 using namespace std;
 int main()
@@ -30,6 +34,22 @@ int main()
 		else if(temp == "GPRMC")
 		{
 			parsePtr = make_shared<RMC>();
+		}
+		else if(temp == "GPGLL")
+		{
+			parsePtr = make_shared<GLL>();
+		}
+		else if(temp == "GPGSA")
+		{
+			parsePtr = make_shared<GSA>();
+		}
+		else if(temp == "GPGSV")
+		{
+			parsePtr = make_shared<GSV>();
+		}
+		else if(temp == "GPVTG")
+		{
+			parsePtr = make_shared<VTG>();
 		}
 		else
 		{
