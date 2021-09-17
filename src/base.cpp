@@ -20,7 +20,7 @@ int Base::firstparse(std::string & msg,std::vector<std::string>&res)
 	if(msg.empty())
 	{
 		std::cout<<"msg为空"<<std::endl;
-		return false;
+		return -4;
 	}
 	std::string strs = msg+",";//最后加个分割符不然取不到最后一段
 	size_t pos = 0;
