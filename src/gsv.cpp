@@ -8,3 +8,7 @@
 
 #include "GSV.h"
 
+bool GSV::parse(std::vector<std::string>&)
+{
+	return true;
+}

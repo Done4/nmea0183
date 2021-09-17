@@ -8,3 +8,7 @@
 
 #include "GLL.h"
 
+bool GLL::parse(std::vector<std::string>&)
+{
+	return true;
+}

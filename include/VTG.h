@@ -12,6 +12,7 @@
 
 class VTG : public Base
 {
+public:
 	VTG()=default;
 	~VTG()=default;
 	bool parse(std::vector<std::string>&);//给成员变量赋值

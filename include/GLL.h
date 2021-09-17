@@ -12,6 +12,7 @@
 
 class GLL : public Base
 {
+public:
 	GLL()=default;
 	~GLL()=default;
 	bool parse(std::vector<std::string>&);//给成员变量赋值

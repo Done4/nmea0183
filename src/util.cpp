@@ -36,3 +36,39 @@ int BccCheck(const char *src) {
 	  }
 	  return sum - num;
 }
+
+double convertLat(std::string &lat,std::string&latname)
+{
+	try
+	{
+		std::string integer = lat.substr(0, 2);
+		std::string decimal = lat.substr(2);
+		double res = stod(integer)+stod(decimal)/60.0;//ddmm.mmmm,先取出小数部分再除60加上整数部分得到结果
+		if(latname == "S")
+			res = -res;
+		return res;
+	}
+	catch(...)
+	{
+		std::cout<<"纬度转换失败:"<<lat<<std::endl;
+		return -1;
+	}
+}
+
+double convertLng(std::string&lng,std::string&lngname)
+{
+	try
+		{
+			std::string integer = lng.substr(0, 3);
+			std::string decimal = lng.substr(3);
+			double res = stod(integer)+stod(decimal)/60.0;//dddmm.mmmm,先取出小数部分再除60加上整数部分得到结果
+			if(lngname == "W")
+				res = -res;
+			return res;
+		}
+		catch(...)
+		{
+			std::cout<<"经度转换失败:"<<lng<<std::endl;
+			return -1;
+		}
+}

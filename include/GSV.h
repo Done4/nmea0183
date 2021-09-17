@@ -12,6 +12,7 @@
 
 class GSV : public Base
 {
+public:
 	GSV()=default;
 	~GSV()=default;
 	bool parse(std::vector<std::string>&);//给成员变量赋值

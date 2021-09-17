@@ -6,5 +6,9 @@
  */
 
 
-
 #include "VTG.h"
+
+bool VTG::parse(std::vector<std::string>&)
+{
+	return true;
+}

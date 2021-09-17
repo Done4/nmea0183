@@ -8,3 +8,7 @@
 
 #include "GSA.h"
 
+bool GSA::parse(std::vector<std::string>&)
+{
+	return true;
+}
