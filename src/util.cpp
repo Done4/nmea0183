@@ -72,3 +72,52 @@ double convertLng(std::string&lng,std::string&lngname)
 			return -1;
 		}
 }
+
+void UTCTolocal(std::string& UTC,std::string& UTCdate,char *date)
+{
+	struct tm time;
+	time.tm_year = stoi(UTCdate.substr(4,2));
+	time.tm_mon = stoi(UTCdate.substr(2,2));
+	time.tm_mday = stoi(UTCdate.substr(0,2));
+	time.tm_hour = stoi(UTC.substr(0,2));
+	time.tm_min = stoi(UTC.substr(2,2));
+	time.tm_sec = stoi(UTC.substr(4,2));
+
+	uint16_t year = time.tm_year+2000;
+	time.tm_hour += 8;
+
+	if(time.tm_mon==1||time.tm_mon==3||time.tm_mon==5||time.tm_mon==7||time.tm_mon==8||time.tm_mon==10||time.tm_mon==12)//1,3,5,7,8,9,12月每月为31天
+	{
+	if(time.tm_hour >= 24)
+	{
+	time.tm_hour -= 24;time.tm_mday += 1;//如果超过24小时，减去24小时，后再加上一天
+	if(time.tm_mday > 31){time.tm_mday -= 31;time.tm_mon += 1;}//如果超过31一天，减去31天，后加上一个月
+	if(time.tm_mon > 12){time.tm_mon -= 12;year++;}//如果超过12月,应该是1月,然后加上一年
+	}
+	}
+	else if(time.tm_mon==4||time.tm_mon==6||time.tm_mon==9||time.tm_mon==11)//4，6，9，11月每月为30天
+	{
+	if(time.tm_hour >= 24)
+	{
+	time.tm_hour -= 24;time.tm_mday += 1;//如果超过24小时，减去24小时，后再加上一天
+	if(time.tm_mday > 30){time.tm_mday -= 30;time.tm_mon += 1;}//如果超过30一天，减去30天，后加上一个月
+	}
+	}
+	else//剩下为2月，闰年为29天，平年为28天
+	{
+	if(time.tm_hour >= 24)
+	{
+	time.tm_hour -= 24;time.tm_mday += 1;
+	if((year%400 == 0)||(year%4 == 0 && year%100 != 0))//判断是否为闰年，年号能被400整除或年号能被4整除，而不能被100整除为闰年
+	{if(time.tm_mday > 29){time.tm_mday -= 29;time.tm_mon += 1;}}//为闰年
+	else{if(time.tm_mday > 28){time.tm_mday -= 28;time.tm_mon += 1;}}//为平年
+	}
+	}
+	time.tm_year = year;
+	snprintf(date,17,"%04d-%02d-%02d %02d:%02d",time.tm_year,time.tm_mon,time.tm_mday,time.tm_hour,time.tm_min);
+}
+
+double converSpeed(std::string& speed)
+{
+	return stod(speed)*1.852;
+}

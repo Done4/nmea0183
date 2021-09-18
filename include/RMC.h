@@ -8,7 +8,7 @@
 #ifndef RMC_H_
 #define RMC_H_
 #include "Base.h"
-
+#include <time.h>
 class RMC : public Base
 {
 public:

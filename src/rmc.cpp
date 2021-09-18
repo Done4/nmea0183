@@ -30,8 +30,14 @@ bool RMC::parse(std::vector<std::string>&res)
 			return false;
 		}
 
-		std::cout<<"UTC 时间:"<<UTC<<" 定位状态:"<<status<<" 纬度:"<<convertLat(lat,latname)<<" N/S:"<<latname<<" 经度:"<<convertLat(lng,lng)<<" E/W:"<<lngname<<" 地面速率"<<speed<<" 地面航向:"<<azimuth<<" UTC日期:"<<UTCdate<<" 磁偏角:"<<md<<" 磁偏角方向:"<<mdd<<" 模式:"<<mode<<std::endl;
+		std::cout<<"UTC 时间:"<<UTC<<" 定位状态:"<<status<<" 纬度:"<<convertLat(lat,latname)<<" N/S:"<<latname<<" 经度:"<<convertLat(lng,lng)<<" E/W:"<<lngname<<" 地面速率"<<converSpeed(speed)<<"千米／小时"<<" 地面航向:"<<azimuth<<" UTC日期:"<<UTCdate<<" 磁偏角:"<<md<<" 磁偏角方向:"<<mdd<<" 模式:"<<mode<<std::endl;
+		char*date = new char[17];
+		UTCTolocal(UTC,UTCdate,date);
+		printf("%s",date);
+		delete date;
+		date = NULL;
 		return true;
 }
+
 
 
